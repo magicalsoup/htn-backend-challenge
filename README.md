@@ -158,7 +158,7 @@ Note that they are optional, i.e you can make a request without the min_frequenc
 That is it for now, was a really fun project, and I learned a lot, especially from the debugging sessions.
 There are comments in the code with details about improvements, possible modifications, and of course documentation.
 
-I hate a new-found love-hate relationship with sqlite now.
+I have a new-found love-hate relationship with sqlite now.
 
 
 

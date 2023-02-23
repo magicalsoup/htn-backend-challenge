@@ -9,8 +9,11 @@ Built using node and express.js, with sqlite3 as the database.
 After cloning the repo, you would need to run: 
 
 ```
+npm install express
+npm install sqlite3
 npm install
 ```
+
 
 ## Scripts
 Note that there are multiple script files:
@@ -146,8 +149,9 @@ GET localhost:8000/api/skills/?min_frequency=<a>&max_frequency=<b>
 
 Where `<a>` and `<b>` are to be replaced with integers specifiying the frequency range.
 
-This request will retrieve and return an array of `TSkill` with all the skills with frequency (number of users with this skill) in the range `[<a>, <b>]`
+This request will retrieve and return an array of `TSkill` with all the skills with frequency (number of users with this skill) in the range `[<a>, <b>] (inclusive)`
 
+Note that they are optional, i.e you can make a request without the min_frequency and max_frequency, and you will get an array of `TSkill` representing all the skills.
 
 ## Remarks
 

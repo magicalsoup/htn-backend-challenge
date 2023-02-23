@@ -100,7 +100,6 @@ OR, make a request:
 GET localhost:8000/api/users/
 ```
 
-
 Which would return an array of `TUser`, matching the same format as in the fake user data file (user_data.json()).
 
 
@@ -118,7 +117,7 @@ GET localhost:8000/api/users/?id=<user_id>
 
 Where `<user_id>` is to be replaced by the id of the user (an integer).
 
-This request will return a `TUser`.
+This request will return a `TUser`. If an invalid id was given, it will returns 400. 
 
 ### Updating User Data endpoint
 
@@ -137,7 +136,7 @@ With the following JSON body format:
 }
 ```
 
-Where `<user_id>` is to be replaced with a valid integer representing the user id, and `<key>` and `<value>` are valid values as specified in the user format. E.g, `<key>` should be one of `["name", "company", "email", "phone", "skills"]`;
+Where `<user_id>` is to be replaced with a valid integer representing the user id, and `<key>` and `<value>` are valid values as specified in the user format. E.g, `<key>` should be one of `["name", "company", "email", "phone", "skills"]`; Returns 400 for any invalid values.
 
 ### Skills Endpoint
 
@@ -152,6 +151,8 @@ Where `<a>` and `<b>` are to be replaced with integers specifiying the frequency
 This request will retrieve and return an array of `TSkill` with all the skills with frequency (number of users with this skill) in the range `[<a>, <b>] (inclusive)`
 
 Note that they are optional, i.e you can make a request without the min_frequency and max_frequency, and you will get an array of `TSkill` representing all the skills.
+
+Returns 400 for any invalid values for min and max frequency.
 
 ## Remarks
 
